@@ -6,8 +6,11 @@ public class FactoryLpDAO {
 	public static Logger log = Logger.getLogger(FactoryLpDAO.class.getName());
 
 	public static LpDAO createLpDAO() {
+		
 		log.info("entered into factory class");
+		
 		LpDAO lpDAO = new LpDAOImpl();
+		
 		return lpDAO;
 
 	}
