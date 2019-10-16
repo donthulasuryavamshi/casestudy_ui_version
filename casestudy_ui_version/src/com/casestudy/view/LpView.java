@@ -10,6 +10,7 @@ import com.casestudy.dao.UserDaoImpl;
 import com.casestudy.exception.ValidationException;
 import com.casestudy.model.LpModel;
 import com.casestudy.model.UpdateLpDetailsModel;
+import com.casestudy.services.Logout;
 import com.casestudy.validation.UpdateLpDetailsModelValidator;
 	public class LpView {
 		public static Logger log = Logger.getLogger(UserDaoImpl.class.getName());
@@ -46,10 +47,11 @@ import com.casestudy.validation.UpdateLpDetailsModelValidator;
 					break;
 
 				case 5:
-					System.out.println("You Have Successfully LoggedOut.Thank You For Visit");
-					UserLogin userLogin = new UserLogin();
-					userLogin.loginMenu();
-
+					//System.out.println("You Have Successfully LoggedOut.Thank You For Visit");
+					//UserLogin userLogin = new UserLogin();
+					//userLogin.loginMenu();
+					Logout logout = new Logout();
+					logout.logoutService();
 					break;
 				default:
 					System.out.println("**Please Enter Valid Option**");

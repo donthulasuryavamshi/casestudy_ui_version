@@ -6,6 +6,8 @@ import java.util.Scanner;
 
 import org.apache.log4j.Logger;
 
+import com.casestudy.controller.UserController;
+
 //import com.virtusa.controller.UserController;
 
 
@@ -25,8 +27,8 @@ public class UserLogin {
 		System.out.println("Enter Password:");
 		String password=sc.next();
 		
-		//UserController userController=new UserController();
-		//userController.userAuthentication(userId, password);
+		UserController userController=new UserController();
+		userController.userAuthentication(userId, password);
 		
 		
 	}
