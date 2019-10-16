@@ -1,4 +1,6 @@
 package com.casestudy.controller;
+import java.util.Scanner;
+
 import org.apache.log4j.Logger;
 
 import com.casestudy.client.UserLogin;
@@ -15,4 +17,14 @@ static Logger log = Logger.getLogger(FrontController.class.getName());
 	 // UserLogin userLogin = new UserLogin();
 	  UserLogin.loginMenu();
   }
+  public void mentorLogin() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter Mentor Id:");
+		String mentorId=scanner.next();
+		System.out.println("Enter Password:");
+		String mentorPassword=scanner.next();		
+		MentorController mentorController=new MentorController();
+		mentorController.mentorAuthentication(mentorId, mentorPassword);
+		scanner.close();
+	}
 }

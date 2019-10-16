@@ -24,7 +24,7 @@ public class MainLoginForm {
 				fc.lpLoginView();
 				break;
 			case 3:
-			
+				fc.mentorLogin();
 				break;
 			default:
 				System.out.println("select an valid option to proceed!!");

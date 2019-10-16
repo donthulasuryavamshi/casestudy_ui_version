@@ -13,7 +13,7 @@ public class UserController {
 		this.userService = FactoryUserService.createUserService();
 	}
 
-	public void userAuthentication(String userId, String password) {
+	public final void userAuthentication(String userId, String password) {
 
 		UserModel userModel = new UserModel();
 		userModel.setUserId(userId);
