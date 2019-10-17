@@ -43,6 +43,7 @@ public class AdminController extends HttpServlet {
 		// TODO Auto-generated method stub
 		PrintWriter out = response.getWriter();
 		try {
+			
 			String username = request.getParameter("user");
 			String pswd = request.getParameter("pwd");
 			AdminServices adminServices = new AdminServices();

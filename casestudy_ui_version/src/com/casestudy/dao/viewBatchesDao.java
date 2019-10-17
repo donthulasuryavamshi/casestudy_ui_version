@@ -11,10 +11,19 @@ public class viewBatchesDao implements ViewBatch{
 		Connection con = com.casestudy.dbconnection.DataBaseConnector.initilizConnection();
 		Statement stmt = con.createStatement();
 		ResultSet rs = stmt.executeQuery("select * from batch");
-		System.out.println("-----------------------------------");
+		//System.out.println("-----------------------------------");
 		while(rs.next()) {
-			System.out.println("in view batch dao executinggg");
-			System.out.println(rs.getString(1) +"  "+rs.getInt(2)+ "  "+rs.getString(3)+"  "+rs.getString(4)+"  "+rs.getString(5)+ "  "+rs.getString(6));
+			/*System.out.println("<html><table border='1' align='center'><tr> "
+					+ "<td><th>BATCH_ID</th></td>"
+					+ "<td><th>BATCH_NAME</th></td>"
+					+ "<td><th>BATCH_CAPACITY</th></td>"
+					+ "<td><th>BATCH_MENTOR_ID</th></td>"
+					+ "<td><th>BATCH_VENUE_ID</th></td>"
+					+ "<td><th>BATCH_START_DATE</th></td>"
+					+ "<td><th>BATCH_END_DATE</th></td>"
+					+ "</tr>");
+			System.out.println("in view batch dao executinggg");*/
+			System.out.println(rs.getString(1) +" | "+rs.getString(2)+" | "+rs.getInt(3)+ " | "+rs.getInt(4)+" | "+rs.getString(5)+" | "+rs.getDate(6)+ " | "+rs.getDate(7));
 		}
 	}catch (Exception e) {
 		// TODO: handle exception

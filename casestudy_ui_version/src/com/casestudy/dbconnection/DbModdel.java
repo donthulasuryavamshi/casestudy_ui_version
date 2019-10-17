@@ -1,9 +1,5 @@
 package com.casestudy.dbconnection;
-
-//package com.virtusa.dbconnection;
-
 import java.util.ResourceBundle;
-import java.util.logging.Logger;
 public class DbModdel {
 private String driver;
 private String url;

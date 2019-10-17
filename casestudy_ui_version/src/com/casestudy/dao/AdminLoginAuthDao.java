@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 
 import org.apache.log4j.Logger;
 
+import com.casestudy.exception.ErrorHandler;
 import com.casestudy.services.LoginService;
 
 public class AdminLoginAuthDao implements AdminLoginAuth {
@@ -22,6 +23,7 @@ public class AdminLoginAuthDao implements AdminLoginAuth {
 			// System.out.println("connected"+username+password);
 			ResultSet result = ps.executeQuery();
 			if (result.next()) {
+				
 				log.info(username + " has logged on to the system");
 				// System.out.println("login succesfull");
 				LoginService as = new LoginService();
@@ -38,7 +40,10 @@ public class AdminLoginAuthDao implements AdminLoginAuth {
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
-			e.printStackTrace();
+			log.info(e);
+			ErrorHandler handler = new ErrorHandler();
+			handler.errors();
+			//e.printStackTrace();
 		}
 		/*
 		 * try { Class.forName("oracle.jdbc.driver.OracleDriver"); } catch

@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 
 import org.apache.log4j.Logger;
 
+import com.casestudy.exception.ErrorHandler;
 import com.casestudy.model.LPRegisterModel;
 import com.casestudy.services.AdminServicesInterface;
 
@@ -13,7 +14,6 @@ public class AdminProfileDao implements AdminProfile {
 	public Logger log = Logger.getLogger(AdminLoginAuthDao.class.getName());
 	@Override
 	public void viewMyProfile() {
-
 		try {
 		Connection con = com.casestudy.dbconnection.DataBaseConnector.initilizConnection();
 		PreparedStatement ps = con.prepareStatement("select * from admindetails");
@@ -22,13 +22,17 @@ public class AdminProfileDao implements AdminProfile {
 		System.out.println("-----------------------------------------------------------------------------------------------------");
 		System.out.println("| MY ID  |  FIRST NAME  |  LAST NAME  |  DATE OF BIRTH  |          EMAIL ID         |  DESIGNATION  |");
 		while(rs.next()) {
+			log.info(" admin has accessed login menu"+rs.getString(1));	
 			System.out.println("");
 			System.out.println(" | "+rs.getString(1)+" | "+rs.getString(2)+" | "+rs.getString(3)+" | "+rs.getDate(4)+" | "+rs.getString(5)+" | "+rs.getString(6));
 		}
-				
+		
 		}catch (Exception e) {
 			// TODO: handle exception
-			e.printStackTrace();
+			log.warn("exception"+e.getMessage());
+			ErrorHandler handler = new ErrorHandler();
+			handler.errors();
+			//e.printStackTrace();
 		}
 		// TODO Auto-generated method stub
 		/*try {

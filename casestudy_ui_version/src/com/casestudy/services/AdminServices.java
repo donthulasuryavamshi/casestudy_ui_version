@@ -95,6 +95,8 @@ public class AdminServices implements AdminServicesInterface {
 	@Override
 	public void profileUpdate() {
 		// TODO Auto-generated method stub
+		UpdataProfileView updateProfile = new UpdateProfileView();
+		
 		updateProfile.updateProfile();
 		
 		
