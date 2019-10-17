@@ -10,7 +10,7 @@ private String url;
 private String username;
 private String password;
 public DbModdel() {
-	ResourceBundle resources = ResourceBundle.getBundle("DbConFile");
+	ResourceBundle resources = ResourceBundle.getBundle("DBConFile");
 	this.driver = resources.getString("driver");
 	this.url=resources.getString("url");
 	this.username= resources.getString("username");

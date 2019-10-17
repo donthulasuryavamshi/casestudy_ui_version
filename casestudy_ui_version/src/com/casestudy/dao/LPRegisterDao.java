@@ -1,10 +1,7 @@
 package com.casestudy.dao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.time.LocalDate;
 
 import org.apache.log4j.Logger;
@@ -12,7 +9,7 @@ import org.apache.log4j.Logger;
 import com.casestudy.model.LPRegisterModel;
 
 public class LPRegisterDao implements LpRegister {
-	public Logger log = Logger.getLogger(AdminLoginAuthDao.class.getName());
+	Logger log = Logger.getLogger(LPRegisterDao.class.getName());
 	@Override
 	public void lpDetailsFilling(LPRegisterModel lprm) {
 		try {
